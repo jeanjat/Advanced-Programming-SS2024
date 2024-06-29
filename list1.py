@@ -24,7 +24,7 @@ def match_ends(words):
   # +++your code here+++
   c=0 # Initialize counter
   for i in range(len(words)): # Go trough every string
-    if len(words[i]) >= 2 and words[i][0] == [i][-1]: 
+    if len(words[i]) >= 2 and words[i][0] == words[i][-1]: 
       # Check conditions 
       # 1. String larger than 2 
       # 2. First and last characters of the string are the same
