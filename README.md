@@ -20,7 +20,7 @@ Author: Jean Jativa
 
 ## Landmarks
 
-[ ] list1  
+[x] list1  
 [ ] list2  
 [ ] mimic  
 [ ] string1 
