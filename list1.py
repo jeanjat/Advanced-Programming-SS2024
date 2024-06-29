@@ -64,7 +64,17 @@ def front_x(words):
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
   # +++your code here+++
-  return
+  a=[] # Empty list
+  b=[] # Empty list
+  for i in range(len(tuples)): # Go trough every element of the tuple
+    a.append(tuples[i][-1]) # Add final element of the tuple to the list
+  a.sort() # Sort the list by the final element of the tuple
+  for i in range(len(tuples)): # Go trough every element of the tuple
+    for j in range(len(tuples)): # Go trough every element of the list
+      if tuples[i][-1]==a[j]: # Compare if the last element of the given tuple
+                              # is equal to the sorted list
+        b.append(tuples[j]) # Add the compared elements to b
+  return b
 
 
 # Simple provided test() function used in main() to print
