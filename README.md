@@ -21,7 +21,7 @@ Author: Jean Jativa
 ## Landmarks
 
 [x] list1  
-[ ] list2  
+[x] list2  
 [ ] mimic  
 [ ] string1 
 [ ] string2
