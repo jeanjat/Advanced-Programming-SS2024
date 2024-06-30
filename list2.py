@@ -28,7 +28,7 @@ def remove_adjacent(nums):
   scalar=array 
   if nums1[-1:] != nums[-1:]: # Exception for last digit
     nums1.append(scalar) # Add it to the list
-  return
+  return nums1
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
