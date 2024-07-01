@@ -17,6 +17,15 @@
 # Return the resulting string.
 def verbing(s):
   # +++your code here+++
+  i='ing' # String with only ing
+  l='ly'  # String with only ly
+  if len(s) < 3 : # Checks if string lenght is less than 3
+    return s  # Return the same string
+  else :              
+    if s[-3:] == i: # Checks if last three characters are ing
+      return s+l # Concatenates ly to the original string
+    else:
+      return s+i # Concatenates ing to the original string
   return
 
 
