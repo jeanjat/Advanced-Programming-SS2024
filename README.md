@@ -23,7 +23,7 @@ Author: Jean Jativa
 [x] list1  
 [x] list2  
 [ ] mimic  
-[ ] string1   
+[x] string1   
 [ ] string2  
 [ ] wordcount  
 [ ] babynames  

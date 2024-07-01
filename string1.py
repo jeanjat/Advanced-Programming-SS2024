@@ -66,7 +66,7 @@ def fix_start(s):
   a=s2.replace(s[0],'*')  # Replaces the first character of the original 
                           # string to * in the whole new string
   b=s[0]+a                # Concatenates the result
-  return
+  return b
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
@@ -84,7 +84,7 @@ def mix_up(a, b):
   # then it is concatenated to the first two characters of the string a
   # and this is concatenated to the string b 
   # (excluidng the first two characters)
-  return
+  return j
 
 
 # Provided simple test() function used in main() to print
