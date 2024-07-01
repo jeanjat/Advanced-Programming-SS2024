@@ -25,11 +25,12 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
+  text='Number of donuts: ' # Create text for number of donuts
   if count >= 10 : # Checks if the number is more than 10
     a='many'       # If it is true, then it returns 'many'
-    return a
+    return text+a
   else :               # If it is less then
-    return str(count)  # It returns the number as a string
+    return text+str(count)  # It returns the number as a string
   return
 
 
@@ -66,7 +67,6 @@ def fix_start(s):
                           # string to * in the whole new string
   b=s[0]+a                # Concatenates the result
   return
-
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
