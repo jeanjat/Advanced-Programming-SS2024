@@ -61,6 +61,29 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
   # +++your code here+++
+  aux1a=''
+  aux2a=''
+  aux1b=''
+  aux2b=''
+  # Create a set of four auxiliary strings
+  # Two for each given string
+  if len(a) %2==0: # Checks if the length of 'a' string is even
+    index=int(len(a)/2) # Get the middle point of the string
+    aux1a=a[:index] # Separate 'a' string using as endpoint the previous index
+    aux2a=a[index:] # Separate 'a' string using as starting point the previous index
+  if len(a) %2!=0: # Checks if the length of 'a' string is odd
+    index=int(1+len(a)/2) # Get the middle point of the string plus one extra character
+    aux1a=a[:index] # Separate 'a' string using as endpoint the previous index
+    aux2a=a[index:] # Separate 'a' string using as starting point the previous index
+  if len(b) %2==0: # Checks if the length of 'b' string is even
+    index=int(len(b)/2) # Get the middle point of the string
+    aux1b=b[:index] # Separate 'b' string using as endpoint the previous index
+    aux2b=b[index:] # Separate 'b' string using as starting point the previous index
+  if len(b) %2!=0: # Checks if the length of 'b' string is odd
+    index=int(1+len(b)/2) # Get the middle point of the string plus one extra character
+    aux1b=b[:index] # Separate 'b' string using as endpoint the previous index
+    aux2b=b[index:] # Separate 'b' string using as starting point the previous index
+  return aux1a+aux1b+aux2a+aux2b # Concatenate in the required order
   return
 
 
