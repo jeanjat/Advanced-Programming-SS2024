@@ -39,7 +39,17 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
   # +++your code here+++
-  return
+  aux1='' # Create empty auxiliary string
+  aux2='' # Create another empty auxiliary string
+  index=s.find('not') # Search string 'not' in given string and assign an index
+  aux1=s[:index] # Separate the given string where 'not' starts
+  aux2=s[index:] # Separate the given string but now 'not' is the starting point
+  if 'bad' in aux2: # Checks for 'bad' in the second auxiliary string
+        if aux2[-1:]=='!' : # Checks if the last character is '!'
+          aux2='good!' # Second auxiliary now turns to 'good!'
+        else:
+          aux2='good' # Any other case, just 'good'
+  return aux1+aux2 # Concatenates both auxiliary strings
 
 
 # F. front_back
