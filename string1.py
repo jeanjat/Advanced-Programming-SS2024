@@ -25,6 +25,11 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
+  if count >= 10 : # Checks if the number is more than 10
+    a='many'       # If it is true, then it returns 'many'
+    return a
+  else :               # If it is less then
+    return str(count)  # It returns the number as a string
   return
 
 
