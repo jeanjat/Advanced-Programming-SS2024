@@ -77,6 +77,13 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
+  j=b[0:2]+a[2:]+' '+a[0:2]+b[2:] 
+  # Slices the first two characters of the string b 
+  # concatenates it to the string a (excluding the fist two characters)
+  # this result is concatenated to a blank space (used as separation)
+  # then it is concatenated to the first two characters of the string a
+  # and this is concatenated to the string b 
+  # (excluidng the first two characters)
   return
 
 
