@@ -60,6 +60,11 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
+  s2=s[1:]                # Sets a new string excluding the first 
+                          # character of the given string
+  a=s2.replace(s[0],'*')  # Replaces the first character of the original 
+                          # string to * in the whole new string
+  b=s[0]+a                # Concatenates the result
   return
 
 
