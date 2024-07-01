@@ -40,6 +40,12 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
+  if len(s)<2:    # Checks if the length of the string is less than 2
+    a=''          # If it is less than 2
+    return a      # It returns an empty string
+  else:           # If it is more than 2
+    s1=s[:2] + s[-2:] # It returns the strings first and last 2 characters
+    return s1
   return
 
 
