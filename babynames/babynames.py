@@ -41,8 +41,26 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
-  return
+  babynames = [] # Create an empty list
+  with open(filename, 'rt', encoding='utf-8') as f: # Open the file to read it
+    text = f.read() 
+  year_text = re.search(r'Popularity\sin\s(\d\d\d\d)', text) # Search exactly the year of popularity
+  year = year_text.group(1) if year_text else 'Unknown'
+  babynames.append(year) # Start the list with the year
 
+  result = re.findall(r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', text) # Search exactly the names of the babys
+  babyranks = {} # Create an empty dictionary 
+
+  for r, boy, girl in result: 
+    if boy not in babyranks: 
+      babyranks[boy] = r # Give the boy name an unique key
+    if girl not in babyranks:
+      babyranks[girl] = r # Give the girl name an unique key
+ 
+  sort = sorted(babyranks.keys()) # Sort names in alphabetical order
+  for name in sort:
+    babynames.append(name + ' ' + babyranks[name]) # Define how to print each name of the babies
+  return babynames
 
 def main():
   # This command-line parsing code is provided.
@@ -63,6 +81,15 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
+  for filename in args:
+    names = extract_names(filename)
+    text = '\n'.join(names)
+    if summary:
+      with open(filename + '.summary', 'w', encoding='utf-8') as outf:
+        outf.write(text + '\n')
+        outf.close()
+    else:
+      print(text)
 
 if __name__ == '__main__':
   main()
