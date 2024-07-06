@@ -26,4 +26,4 @@ Author: Jean Jativa
 [x] string1   
 [x] string2  
 [ ] wordcount  
-[ ] babynames  
+[x] babynames  (check babynames folder)
