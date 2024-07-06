@@ -59,7 +59,7 @@ def extract_names(filename):
  
   sort = sorted(babyranks.keys()) # Sort names in alphabetical order
   for name in sort:
-    babynames.append(name + ' ' + babyranks[name]) # Define how to print each name of the babies
+    babynames.append(name + ' ' + babyranks[name]) # Add every name of babies plus the unique key to the list
   return babynames
 
 def main():
