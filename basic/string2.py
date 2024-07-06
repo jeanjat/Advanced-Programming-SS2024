@@ -17,6 +17,15 @@
 # Return the resulting string.
 def verbing(s):
   # +++your code here+++
+  i='ing' # String with only ing
+  l='ly'  # String with only ly
+  if len(s) < 3 : # Checks if string lenght is less than 3
+    return s  # Return the same string
+  else :              
+    if s[-3:] == i: # Checks if last three characters are ing
+      return s+l # Concatenates ly to the original string
+    else:
+      return s+i # Concatenates ing to the original string
   return
 
 
@@ -30,7 +39,17 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
   # +++your code here+++
-  return
+  aux1='' # Create empty auxiliary string
+  aux2='' # Create another empty auxiliary string
+  index=s.find('not') # Search string 'not' in given string and assign an index
+  aux1=s[:index] # Separate the given string where 'not' starts
+  aux2=s[index:] # Separate the given string but now 'not' is the starting point
+  if 'bad' in aux2: # Checks for 'bad' in the second auxiliary string
+        if aux2[-1:]=='!' : # Checks if the last character is '!'
+          aux2='good!' # Second auxiliary now turns to 'good!'
+        else:
+          aux2='good' # Any other case, just 'good'
+  return aux1+aux2 # Concatenates both auxiliary strings
 
 
 # F. front_back
@@ -42,6 +61,29 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
   # +++your code here+++
+  aux1a=''
+  aux2a=''
+  aux1b=''
+  aux2b=''
+  # Create a set of four auxiliary strings
+  # Two for each given string
+  if len(a) %2==0: # Checks if the length of 'a' string is even
+    index=int(len(a)/2) # Get the middle point of the string
+    aux1a=a[:index] # Separate 'a' string using as endpoint the previous index
+    aux2a=a[index:] # Separate 'a' string using as starting point the previous index
+  if len(a) %2!=0: # Checks if the length of 'a' string is odd
+    index=int(1+len(a)/2) # Get the middle point of the string plus one extra character
+    aux1a=a[:index] # Separate 'a' string using as endpoint the previous index
+    aux2a=a[index:] # Separate 'a' string using as starting point the previous index
+  if len(b) %2==0: # Checks if the length of 'b' string is even
+    index=int(len(b)/2) # Get the middle point of the string
+    aux1b=b[:index] # Separate 'b' string using as endpoint the previous index
+    aux2b=b[index:] # Separate 'b' string using as starting point the previous index
+  if len(b) %2!=0: # Checks if the length of 'b' string is odd
+    index=int(1+len(b)/2) # Get the middle point of the string plus one extra character
+    aux1b=b[:index] # Separate 'b' string using as endpoint the previous index
+    aux2b=b[index:] # Separate 'b' string using as starting point the previous index
+  return aux1a+aux1b+aux2a+aux2b # Concatenate in the required order
   return
 
 

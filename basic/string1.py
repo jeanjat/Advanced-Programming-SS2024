@@ -25,6 +25,12 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
+  text='Number of donuts: ' # Create text for number of donuts
+  if count >= 10 : # Checks if the number is more than 10
+    a='many'       # If it is true, then it returns 'many'
+    return text+a
+  else :               # If it is less then
+    return text+str(count)  # It returns the number as a string
   return
 
 
@@ -35,6 +41,12 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
+  if len(s)<2:    # Checks if the length of the string is less than 2
+    a=''          # If it is less than 2
+    return a      # It returns an empty string
+  else:           # If it is more than 2
+    s1=s[:2] + s[-2:] # It returns the strings first and last 2 characters
+    return s1
   return
 
 
@@ -49,8 +61,12 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
-  return
-
+  s2=s[1:]                # Sets a new string excluding the first 
+                          # character of the given string
+  a=s2.replace(s[0],'*')  # Replaces the first character of the original 
+                          # string to * in the whole new string
+  b=s[0]+a                # Concatenates the result
+  return b
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
@@ -61,7 +77,14 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
-  return
+  j=b[0:2]+a[2:]+' '+a[0:2]+b[2:] 
+  # Slices the first two characters of the string b 
+  # concatenates it to the string a (excluding the fist two characters)
+  # this result is concatenated to a blank space (used as separation)
+  # then it is concatenated to the first two characters of the string a
+  # and this is concatenated to the string b 
+  # (excluidng the first two characters)
+  return j
 
 
 # Provided simple test() function used in main() to print

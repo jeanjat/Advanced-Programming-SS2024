@@ -12,9 +12,23 @@
 # all adjacent == elements have been reduced to a single element,
 # so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or
 # modify the passed in list.
+
+import numpy as np
+
 def remove_adjacent(nums):
   # +++your code here+++
-  return
+  nums1=[]  # Empty list
+  for i in range(0, len(nums)+1): # Go through every element of the list
+        try:
+          if nums[i] != nums[i+1]: # Check if current number and the next one are different
+            nums1.append(nums[i]) # Add to the empty list if true
+        except:
+           pass # Exception for when it is overflowed
+  array=np.array(nums[-1:]) # Define previous list as an array
+  scalar=array 
+  if nums1[-1:] != nums[-1:]: # Exception for last digit
+    nums1.append(scalar) # Add it to the list
+  return nums1
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
@@ -23,7 +37,10 @@ def remove_adjacent(nums):
 # pass of both lists.
 def linear_merge(list1, list2):
   # +++your code here+++
-  return
+  res = [] # Empty list
+  res = list1+list2 # Combine both lists given
+  res.sort() # Sort the combined list
+  return res
 
 # Note: the solution above is kind of cute, but unforunately list.pop(0)
 # is not constant time with the standard python list implementation, so
