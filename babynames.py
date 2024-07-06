@@ -42,10 +42,12 @@ def extract_names(filename):
   """
   # +++your code here+++
   babynames = [] # Create an empty list
-  with open('baby1990.html', 'rt', encoding='utf-8') as f: # Open the file to read it
+  with open(filename, 'rt', encoding='utf-8') as f: # Open the file to read it
     text = f.read() 
-  year = re.search(r'Popularity\sin\s(\d\d\d\d)', text) # Search exactly the year of popularity
-  print(year) # Print the year just to be sure
+  year_text = re.search(r'Popularity\sin\s(\d\d\d\d)', text) # Search exactly the year of popularity
+  year = year_text.group(1) if year_text else 'Unknown'
+  babynames.append(year) # Start the list with the year
+
   result = re.findall(r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', text) # Search exactly the names of the babys
   babyranks = {} # Create an empty dictionary 
 
