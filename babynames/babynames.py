@@ -93,3 +93,7 @@ def main():
 
 if __name__ == '__main__':
   main()
+# To execute use the following text on the terminal
+# for only a file (baby1990.html): py ./babynames.py baby1990.html
+# for a summary file: py ./babynames.py --summaryfile baby1990.html
+# also check the directory where you are executing
