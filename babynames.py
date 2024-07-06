@@ -41,8 +41,24 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
-  return
+  babynames = [] # Create an empty list
+  with open('baby1990.html', 'rt', encoding='utf-8') as f: # Open the file to read it
+    text = f.read() 
+  year = re.search(r'Popularity\sin\s(\d\d\d\d)', text) # Search exactly the year of popularity
+  print(year) # Print the year just to be sure
+  result = re.findall(r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', text) # Search exactly the names of the babys
+  babyranks = {} # Create an empty dictionary 
 
+  for r, boy, girl in result: 
+    if boy not in babyranks: 
+      babyranks[boy] = r # Give the boy name an unique key
+    if girl not in babyranks:
+      babyranks[girl] = r # Give the girl name an unique key
+ 
+  sort = sorted(babyranks.keys()) # Sort names in alphabetical order
+  for name in sort:
+    babynames.append(name + ' ' + babyranks[name]) # Define how to print each name of the babies
+  return babynames
 
 def main():
   # This command-line parsing code is provided.
