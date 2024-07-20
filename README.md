@@ -18,6 +18,12 @@ Author: Jean Jativa
 - Python 3 version 3.14  
 - Visual Studio Code 1.90.2  
 
+## Libraries
+
+- numpy for linear algebra
+- random to create a randomic number (mimic)
+- sys to manipulate Python Runtime Environment
+
 ## Landmarks
 
 [x] list1  
