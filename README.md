@@ -25,5 +25,5 @@ Author: Jean Jativa
 [x] mimic  
 [x] string1   
 [x] string2  
-[ ] wordcount  
+[x] wordcount  
 [x] babynames  (check babynames folder)
