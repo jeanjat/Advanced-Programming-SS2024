@@ -22,7 +22,7 @@ Author: Jean Jativa
 
 [x] list1  
 [x] list2  
-[ ] mimic  
+[x] mimic  
 [x] string1   
 [x] string2  
 [ ] wordcount  
