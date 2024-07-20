@@ -45,6 +45,24 @@ import sys
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
+def print_words(filename):
+  with open(filename, 'r') as file: # Open the file to read it
+    text = file.read().rstrip()
+  words = text.split() # Splits the string into a list, in this case get all the words
+  count_dict = {} # Create an empty dictionary
+
+  for word in words: 
+    if word in count_dict: # If the word was found in the dictionary, 
+      count_dict[word] += 1 # then increase counter of this specific word
+    else:
+      count_dict[word] = 1 # If it is the first time found,
+                           # then initiate the counter of this word
+  for word, count in count_dict.items():
+    print(f"{word} {count}")
+    
+  return
+      
+  
 ###
 
 # This basic command line argument parsing code is provided and
