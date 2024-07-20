@@ -51,7 +51,7 @@ def mimic_dict(filename):
   with open(filename, 'r') as file: # Open the file to read it
     text = file.read().rstrip()
 
-  words = text.split() # Splits the string into a list, in these case get all the words
+  words = text.split() # Splits the string into a list, in this case get all the words
   mimic_dict = {} # Create an empty dictionary
   previous_word = '' # Create an empty string for previous word
 
@@ -69,6 +69,12 @@ def mimic_dict(filename):
 def print_mimic(mimic_dict, word):
   """Given mimic dict and start word, prints 200 random words."""
   # +++your code here+++
+  for i in range(200): # For loop with 200 iterations
+    print(word, end=' ') # Print a given string and an empty space
+    next_word = mimic_dict.get(word, None) # Get 'word' from the dictionary
+    if not next_word:
+      next_word = mimic_dict['']  # Go back to the beginning if there is no next word
+    word = random.choice(next_word) # Pick a randow word as next one
   return
 
 
