@@ -59,10 +59,25 @@ def print_words(filename):
                            # then initiate the counter of this word
   for word, count in count_dict.items():
     print(f"{word} {count}")
-    
   return
-      
-  
+
+def print_top(filename):
+
+  with open(filename, 'r') as file: # Open the file to read it
+    text = file.read().rstrip()
+  words = text.split() # Splits the string into a list, in this case get all the words
+  count_dict = {} # Create an empty dictionary
+
+  for word in words: 
+    if word in count_dict: # If the word was found in the dictionary, 
+      count_dict[word] += 1 # then increase counter of this specific word
+    else:
+      count_dict[word] = 1 # If it is the first time found,
+                           # then initiate the counter of this word
+  sorted_words = sorted(count_dict.items(), key=lambda x:x[1], reverse=True) # Sort the dictionary in decreasing order
+  for word, count in sorted_words[:20]: # Print the 20 most common words in deceasing order 
+    print(f"{word} {count}")
+  return
 ###
 
 # This basic command line argument parsing code is provided and
