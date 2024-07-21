@@ -18,6 +18,15 @@ import subprocess
 # +++your code here+++
 # Write functions and modify main() to call them
 
+def special_path(dir):
+  path1=[] # Empty list
+  for entry in os.listdir(dir):
+      match = re.search(r'__(\w+)__', entry) # Search for this specific file name
+      print(match)
+      if match:
+        path1.append(os.path.abspath(os.path.join(dir, entry))) # Files are added to the path list
+  print(path1)
+  return path1
 
 
 def main():
