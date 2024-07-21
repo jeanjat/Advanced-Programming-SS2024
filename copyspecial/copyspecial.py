@@ -28,7 +28,14 @@ def special_path(dir):
   print(path1)
   return path1
 
+def copy_to(paths,dir):
+  if not os.path.exists(dir): # If no direction with the given names exists then create one
+      os.mkdir(dir)  
+  for spath in paths:
+      file = os.path.basename(spath) # Go through all the files in paths list
+      shutil.copy(spath, os.path.join(dir,file)) # Copy them to the direction given
 
+      
 def main():
   # This basic command line argument parsing code is provided.
   # Add code to call your functions below.
