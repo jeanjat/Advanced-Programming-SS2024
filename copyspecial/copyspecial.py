@@ -35,7 +35,15 @@ def copy_to(paths,dir):
       file = os.path.basename(spath) # Go through all the files in paths list
       shutil.copy(spath, os.path.join(dir,file)) # Copy them to the direction given
 
-      
+def zip_to(paths,zippath):
+  order = 'zip -j '  + ' ' + ''.join(paths)
+  print("Command I'm going to do:" + order) # Print what paths are going to be zipped
+  archived = shutil.make_archive('zipfile', 'zip', zippath) # Zip the files
+  if os.path.exists(paths):
+    print(archived) 
+  else: 
+    print("ZIP file not created")
+
 def main():
   # This basic command line argument parsing code is provided.
   # Add code to call your functions below.
@@ -66,6 +74,16 @@ def main():
 
   # +++your code here+++
   # Call your functions
+  paths=[]
+
+  for dirname in args: 
+    paths.extend(special_path(dirname)) # Add the path written to paths list
+
+  print(paths)
+ 
+  copy_to(paths, todir)
+
+  zip_to(paths,todir)
 
 if __name__ == '__main__':
   main()
