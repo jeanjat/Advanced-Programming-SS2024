@@ -23,6 +23,9 @@ Author: Jean Jativa
 - numpy for linear algebra
 - random to create a randomic number (mimic)
 - sys to manipulate Python Runtime Environment
+- re to check if a particular string matches a given regular expression
+- os to use the operating system depending functionality 
+- shutil for highl level operations on files and collections of files
 
 ## Landmarks
 
@@ -33,3 +36,7 @@ Author: Jean Jativa
 [x] string2  
 [x] wordcount  
 [x] babynames  (check babynames folder)
+
+## Extra
+[x] copyspecial
+
